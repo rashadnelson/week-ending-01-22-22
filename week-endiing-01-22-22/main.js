@@ -26,11 +26,17 @@ console.log(getSumBinary);
 function validatePIN(pin) {
 	//return true or false
 	if (pin.length === 4 || pin.length === 6) {
-		return true;
+		pin.forEach((element, index) => {
+			//console.log(element);
+			let floatNumCheck = Number.isInteger(element);
+			console.log(floatNumCheck);
+
+			//let charCheck = /[a-zA-Z]/.test(element);
+			//console.log(charCheck);
+		});
 	} else {
 		return false;
 	}
 }
 
-let getValidatePIN = validatePIN([2, 4, 6, 8]);
-console.log(getValidatePIN);
+validatePIN(['b', 4, 6, 8]);
